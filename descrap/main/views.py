@@ -39,16 +39,14 @@ def contact2(request):
 def handlelogin(request):
     
     if request.method == "POST":
-        postdata = request.POST.copy()
-        loginemail = postdata.get('email',None)
-        loginpass = postdata.get('loginpass',None)
+        
+        loginname = request.POST["email"]
+        loginpass = request.POST.get('loginpass','')
 
-        user = authenticate(email=loginemail, password=loginpass)
-        print(user)
-        print(user.check_password(raw_password=loginpass))
-        login(request,user)
+        user = authenticate(email=loginname, password=loginpass)
+
         if user is not None:
-            
+            login(request,user)
             messages.success(request,'Successfully Logged In')
             return redirect('index')
 
@@ -80,8 +78,8 @@ def handlesignup(request):
        
         create_new_user = MyUser.objects.create_user(email= email,password= password)
         create_new_user.save()
-        user = authenticate(username=username, password=password)
-        login(request, user)
+    
+        login(request, create_new_user)
         if create_new_user is not None:
                 if create_new_user.is_active:
                     messages.success(request,"USER CREATED SUCCESFULLY")
