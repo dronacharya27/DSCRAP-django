@@ -64,7 +64,7 @@ Access the admin panel at http://127.0.0.1:8000/admin/ using the admin credentia
 
 
 
-#SCREENSHOTS
+## SCREENSHOTS
 <img width="1511" alt="Screenshot 2023-12-27 at 6 51 02 PM" src="https://github.com/dronacharya27/DSCRAP-django/assets/93179377/e80a17e7-6276-47c6-9656-12d6cc95193f">
 
 <img width="1512" alt="Screenshot 2023-12-27 at 6 51 49 PM" src="https://github.com/dronacharya27/DSCRAP-django/assets/93179377/7ee75a23-0546-469a-84da-a6fc97c7e4fc">
