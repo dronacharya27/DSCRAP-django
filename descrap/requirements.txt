@@ -27,3 +27,4 @@ stack-data==0.6.3
 traitlets==5.14.0
 tzdata==2023.3
 wcwidth==0.2.12
+psycopg2-binary==2.9.9
