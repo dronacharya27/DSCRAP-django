@@ -1,5 +1,5 @@
 # build_files.sh
-pip install -r requirements.txt
+source  .venv/bin/activate
 # python3 manage.py makemigrations
 # python3 manage.py migrate
 python3.9 manage.py collectstatic
