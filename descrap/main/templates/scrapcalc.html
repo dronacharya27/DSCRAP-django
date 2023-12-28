@@ -1,9 +1,4 @@
 
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   {% load widget_tweaks %}
@@ -103,10 +98,10 @@
   <section id="hero">
     {% include 'messages.html' %}
     <div class="container">
-      <div class="row justify-content-between">
+      <div class="row" style="display:flex; justify-content:center; align-items:center;">
         <!-- <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center"> -->
-          <div data-aos="zoom-out" style="width: 550px; height: 250px; margin-top: 25px; margin-left: 25%; " >
-           <form method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div data-aos="zoom-out" style="display:flex; justify-content:center; align-items:center;" >
+           <form method="post" enctype="multipart/form-data" style="display:flex; justify-content:center; align-items:center; flex-direction:column; width: 35vmax; height: 35vmax;">{% csrf_token %}
            <label  for="recipient-name" class="col-form-label" style="font-size: medium; color: azure;"> Our website provide AI feature which will genereate the *Amount of your Scrap just by looking at it. Upload a Clear image of your scrap to generate *Amount that you will receive by selling.</label>
 
            {% render_field form.name placeholder="Your Good Name" class="form-control " %}

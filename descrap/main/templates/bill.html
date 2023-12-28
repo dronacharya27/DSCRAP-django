@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   {% load widget_tweaks %}
@@ -201,18 +194,21 @@ tbody {
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="checkout">New message</h1>
+          <h1 class="modal-title fs-5" id="checkout">Checkout</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="/add/" method="post">{% csrf_token %}
+          <form action="/add/" method="post" style='display:flex; justify-content:center; align-items:center; flex-direction:column'>{% csrf_token %}
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Phone Number:</label>
-             <input type="text" id="aname" name="aname">
+
+            <label for="recipient-name" class="col-form-label  text-center">Phone Number</label>
+             <input type="text" class="form-control" id="aname" name="aname" required>
             </div>
             <div class="mb-3">
-              <label for="message-text" class="col-form-label">Address:</label>
-              <textarea class="form-control" id="add" name="add"></textarea>
+
+            <label for="recipient-name" class="col-form-label  text-center">Address</label>
+            <textarea type="text" class="form-control" id="add" name="add" required>
+            </textarea>
             </div>
           
         </div>
