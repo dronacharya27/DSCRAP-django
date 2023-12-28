@@ -33,7 +33,7 @@ def objd(path):
 	net.setInputMean((127.5, 127.5, 127.5))
 	net.setInputSwapRB(True)
 
-	classIds, confs, bbox = net.detect(img,confThreshold=0.7)
+	classIds, confs, bbox = net.detect(img,confThreshold=0.5)
 
 	if len(classIds) != 0:
 				for classId, confidence,box in zip(classIds.flatten(),confs.flatten(),bbox):
