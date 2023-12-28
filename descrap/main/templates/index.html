@@ -107,7 +107,7 @@
             <h1>Sell your old unwanted things with <span>De-SCRAP</span></h1>
             <h2>Easy booking and pickup at your convenience </h2>
             <div class="text-center text-lg-start">
-              {% if user.is_authenticated%} 
+              {% if user.is_authenticated%}
               <a href="/scrapcalc/" data-bs-whatever="@mdo" class="btn-get-started scrollto">Calculate Scrap</a>
               {% else %}
               <a href="#sigunmodal " data-bs-toggle="modal" data-bs-target="#sigunmodal" data-bs-whatever="@mdo" class="btn-get-started scrollto">Get Started</a>
@@ -146,48 +146,40 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header " >
-        <h1 class="modal-title fs-5"  id="sigunmodal" style="margin:0 177px;">Sign-Up</h1>
+        <h1 class="modal-title fs-5"  id="sigunmodal">Sign-Up</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form action="/signup/" method="post"> {% csrf_token %}
-          <div class="mb-3">
+          <div>
             <label for="recipient-name" class="col-form-label  text-center">User Name</label>
             <input type="text" class="form-control" id="username" name="username" required>
           </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label  text-center">First Name</label>
-            <input type="text" class="form-control" id="fname" name="fname" required>
-          </div>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Last Name</label>
-            <input type="text" class="form-control" id="lname" name="lname" required>
-          </div>
-          <div class="mb-3">
+  
+          <div>
             <label for="recipient-name" class="col-form-label">Email</label>
             <input type="email" class="form-control" id="email" name="email" required>
           </div>
-          <div class="row g-3 align-items-center">
-            
+        
+            <div>
               <label for="password" class="col-form-label">Password</label>
               <input type="password" id="pass" class="form-control" aria-labelledby="passwordHelpInline" required>
               <span id="passwordHelpInline" class="form-text">
                 Must be 8-20 characters long.
               </span>
+            </div>
+              
             
-            
-              <label for="password" class="col-form-label">Enter Password Again</label>
+          <div>
+            <label for="password" class="col-form-label">Enter Password Again</label>
               <input type="password" id="pass2" class="form-control" aria-labelledby="passwordHelpInline" required>
               <span id="passwordHelpInline" class="form-text mb-3">
                 Both password Must be same.
               </span>
-           
-
-            
           </div>
 
-          <div class="modal-footer center">
-            <button type="submit" class="btn btn-primary" style="margin: 0 150px; width: 1000px;">Sign-Up</button>
+          <div class="modal-footer center" style="justify-content:center">
+            <button type="submit" class="btn btn-primary">Sign-Up</button>
         </div>
         </form>
       </div>
