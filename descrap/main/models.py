@@ -25,7 +25,7 @@ from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email, password=None):
+    def create_user(self, username,email, password=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
@@ -35,20 +35,21 @@ class MyUserManager(BaseUserManager):
 
         user = self.model(
             email=self.normalize_email(email),
+            username=username
         )
         
-        user.is_admin = True
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, password=None):
+    def create_superuser(self, username,email, password=None):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
         """
         user = self.create_user(
-            email,
+            username=username,
+            email=email,
             password=password,
         )
         user.is_admin = True
@@ -64,7 +65,7 @@ class MyUser(AbstractBaseUser):
     )
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-
+    username = models.CharField(max_length=50,blank=True, null=True)
     objects = MyUserManager()
 
     USERNAME_FIELD = "email"
@@ -75,7 +76,7 @@ class MyUser(AbstractBaseUser):
     def has_perm(self, perm, obj=None):
         "Does the user have a specific permission?"
         # Simplest possible answer: Yes, always
-        return True
+        return self.is_admin
 
     def has_module_perms(self, app_label):
         "Does the user have permissions to view the app `app_label`?"

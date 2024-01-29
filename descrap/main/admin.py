@@ -19,5 +19,5 @@ class ContactAdmin(admin.ModelAdmin):
 
 @admin.register(MyUser)
 class UserAdmin(admin.ModelAdmin):
-    list_display=['email']
+    list_display=['username','email','is_staff','is_active','is_admin']
 
